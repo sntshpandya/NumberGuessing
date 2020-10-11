@@ -1,0 +1,38 @@
+using System;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+        public static int i;
+        public static int IntYourGuess;
+
+        static void Main(string[] args)
+        {
+            
+            Random num = new Random();
+            int WinNum = num.Next(0, 100);
+            do
+            {
+                try
+                {
+
+                    Console.Write("Enter Your Guess:");
+                    string YourGuess = Console.ReadLine();
+                    IntYourGuess = Convert.ToInt32(YourGuess);
+                }
+                catch
+                {
+                    Console.WriteLine("Invalid Input");
+                }
+            } while (IntYourGuess != WinNum);
+            if (IntYourGuess == WinNum) 
+            {
+                Console.WriteLine("You Win");  
+            }
+            
+            
+
+        }
+    }
+}
